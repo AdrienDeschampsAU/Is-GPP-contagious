@@ -1,6 +1,6 @@
 * Table 3:
 
-import delimited "C:\Users\desch\OneDrive\Documents\doctorat\Waseda\panel10\submission\logit.csv", clear
+import delimited "...logit.csv", clear
 generate logpop_2020 = log(population_2020)
 encode prefecture, generate(prefecture_ind)
 
@@ -12,7 +12,7 @@ logistic gpp_2020 is_prefectural_capital logpop_2020 income_2020 debt_2020 liber
 
 * Table 4:
 
-import delimited "C:\Users\desch\OneDrive\Documents\doctorat\Waseda\panel10\submission\survival.csv", clear
+import delimited "...survival.csv", clear
 generate logpop = log(population)
 replace year = year - 2010
 tostring year, gen(year_str)
@@ -31,7 +31,7 @@ stcox logpop income debt liberal sector_1 sector_2 liveable mean_log_pop_50km me
 
 * Table 5:
 
-import delimited "C:\Users\desch\OneDrive\Documents\doctorat\Waseda\panel10\submission\survival.csv", clear
+import delimited "...survival.csv", clear
 replace year = year - 2010
 tostring year, gen(year_str)
 encode year_str, gen(year_ind)
@@ -50,7 +50,7 @@ stcox mean_gpp_50km_lag_1 if nb_neighbors_50km > 0, shared(prefecture) nohr
 
 * Table 6:
 
-import delimited "C:\Users\desch\OneDrive\Documents\doctorat\Waseda\panel10\submission\survival.csv", clear
+import delimited "...survival.csv", clear
 generate logpop = log(population)
 replace year = year - 2010
 tostring year, gen(year_str)
@@ -70,7 +70,7 @@ stcox mean_gpp_50km_lag_1 mean_gpp_beyond_50km_lag_1 logpop income debt sector_1
 
 * Table 7:
 
-import delimited "C:\Users\desch\OneDrive\Documents\doctorat\Waseda\panel10\submission\survival.csv", clear
+import delimited "...survival.csv", clear
 generate logpop = log(population)
 generate inter_neighbors_pop = logpop*mean_neighbors_lag_1
 generate inter_neighbors_income = income*mean_neighbors_lag_1
@@ -97,7 +97,7 @@ stcox inter_20km_income mean_gpp_20km_lag_1 mean_gpp_beyond_20km_lag_1 logpop in
 
 * Table 8:
 
-import delimited "C:\Users\desch\OneDrive\Documents\doctorat\Waseda\panel10\submission\survival.csv", clear
+import delimited "...survival.csv", clear
 generate logpop = log(population)
 replace year = year - 2010
 tostring year, gen(year_str)
@@ -115,7 +115,7 @@ stcox count_publish_20km_lag_1 count_gpp_20km_lag_1 count_gpp_beyond_20km_lag_1 
 
 * Table 9:
 
-import delimited "C:\Users\desch\OneDrive\Documents\doctorat\Waseda\panel10\submission\logit.csv", clear
+import delimited "...logit.csv", clear
 generate logpop_2020 = log(population_2020)
 encode prefecture, generate(prefecture_ind)
 encode with_designated, generate(with_designated_ind)
@@ -138,7 +138,7 @@ stcox with_designated logpop income debt sector_1 sector_2 population_prefecture
 
 * Table F.11:
 
-import delimited "C:\Users\desch\OneDrive\Documents\doctorat\Waseda\panel10\submission\survival.csv", clear
+import delimited "...survival.csv", clear
 generate logpop = log(population)
 replace year = year - 2010
 tostring year, gen(year_str)
@@ -163,7 +163,7 @@ estat phtest
 
 * Table G.12:
 
-import delimited "C:\Users\desch\OneDrive\Documents\doctorat\Waseda\panel10\submission\survival.csv", clear
+import delimited "...survival.csv", clear
 generate logpop = log(population)
 replace year = year - 2010
 tostring year, gen(year_str)
@@ -182,7 +182,7 @@ stcox logpop income debt sector_1 sector_2 liveable mean_log_pop_50km mean_incom
 
 * Table G.13:
 
-import delimited "C:\Users\desch\OneDrive\Documents\doctorat\Waseda\panel10\submission\survival.csv", clear
+import delimited "...survival.csv", clear
 generate logpop = log(population)
 replace year = year - 2010
 tostring year, gen(year_str)
@@ -207,7 +207,7 @@ estat phtest
 
 * Table H.14:
 
-import delimited "C:\Users\desch\OneDrive\Documents\doctorat\Waseda\panel10\submission\survival.csv", clear
+import delimited "...survival.csv", clear
 generate logpop = log(population)
 replace year = year - 2010
 tostring year, gen(year_str)
@@ -233,7 +233,7 @@ estat phtest
 
 * Table J.15:
 
-import delimited "C:\Users\desch\OneDrive\Documents\doctorat\Waseda\panel10\submission\survival.csv", clear
+import delimited "...survival.csv", clear
 generate logpop = log(population)
 replace year = year - 2010
 tostring year, gen(year_str)
@@ -259,7 +259,7 @@ estat phtest
 
 * Table K.16:
 
-import delimited "C:\Users\desch\OneDrive\Documents\doctorat\Waseda\panel10\submission\survival.csv", clear
+import delimited "...survival.csv", clear
 generate logpop = log(population)
 replace year = year - 2010
 tostring year, gen(year_str)
@@ -274,7 +274,7 @@ stcox mean_gpp_10km_lag_2 mean_gpp_beyond_10km_lag_2 logpop income debt sector_1
 stcox mean_gpp_20km_lag_2 mean_gpp_beyond_20km_lag_2 logpop income debt sector_1 sector_2 liveable mean_log_pop_20km mean_income_20km liberal_prefecture if nb_neighbors_20km > 0, shared(prefecture) nohr
 
 
-import delimited "C:\Users\desch\OneDrive\Documents\doctorat\Waseda\panel10\submission\survival.csv", clear
+import delimited "...survival.csv", clear
 generate logpop = log(population)
 replace year = year - 2010
 tostring year, gen(year_str)
@@ -293,7 +293,7 @@ stcox mean_gpp_20km_lag_3 mean_gpp_beyond_20km_lag_3 logpop income debt sector_1
 
 * Table K.17:
 
-import delimited "C:\Users\desch\OneDrive\Documents\doctorat\Waseda\panel10\submission\survival.csv", clear
+import delimited "...survival.csv", clear
 generate logpop = log(population)
 replace year = year - 2010
 tostring year, gen(year_str)
@@ -311,7 +311,7 @@ stcox mean_gpp_20km_lag_2 mean_gpp_beyond_20km_lag_2 logpop income debt sector_1
 estat phtest
 
 
-import delimited "C:\Users\desch\OneDrive\Documents\doctorat\Waseda\panel10\submission\survival.csv", clear
+import delimited "...survival.csv", clear
 generate logpop = log(population)
 replace year = year - 2010
 tostring year, gen(year_str)
@@ -333,7 +333,7 @@ estat phtest
 
 * Table L.18:
 
-import delimited "C:\Users\desch\OneDrive\Documents\doctorat\Waseda\panel10\submission\survival.csv", clear
+import delimited "...survival.csv", clear
 generate logpop = log(population)
 generate inter_neighbors_pop = logpop*mean_neighbors_lag_1
 generate inter_neighbors_income = income*mean_neighbors_lag_1
@@ -365,7 +365,7 @@ estat phtest
 
 * Table M.19:
 
-import delimited "C:\Users\desch\OneDrive\Documents\doctorat\Waseda\panel10\submission\survival.csv", clear
+import delimited "...survival.csv", clear
 generate logpop = log(population)
 replace year = year - 2010
 tostring year, gen(year_str)
@@ -385,7 +385,7 @@ stcox is_prefectural_capital mean_gpp_50km_lag_1 mean_gpp_beyond_50km_lag_1 logp
 
 * Table M.20:
 
-import delimited "C:\Users\desch\OneDrive\Documents\doctorat\Waseda\panel10\submission\survival.csv", clear
+import delimited "...survival.csv", clear
 generate logpop = log(population)
 replace year = year - 2010
 tostring year, gen(year_str)
@@ -411,7 +411,7 @@ estat phtest
 
 * Table N.21:
 
-import delimited "C:\Users\desch\OneDrive\Documents\doctorat\Waseda\panel10\submission\logit.csv", clear
+import delimited "...logit.csv", clear
 generate logpop_2020 = log(population_2020)
 encode prefecture, generate(prefecture_ind)
 
@@ -423,7 +423,7 @@ logistic publish_2020 is_prefectural_capital mean_publish_20km_2020 logpop_2020 
 
 * Table O.22:
 
-import delimited "C:\Users\desch\OneDrive\Documents\doctorat\Waseda\panel10\submission\survival.csv", clear
+import delimited "...survival.csv", clear
 generate logpop = log(population)
 replace year = year - 2010
 tostring year, gen(year_str)
@@ -440,3 +440,4 @@ stcox count_publish_10km_lag_1 count_gpp_10km_lag_1 count_gpp_beyond_10km_lag_1 
 estat phtest
 stcox count_publish_20km_lag_1 count_gpp_20km_lag_1 count_gpp_beyond_20km_lag_1 logpop income debt sector_1 sector_2 liveable mean_log_pop_20km mean_income_20km  if nb_neighbors_20km > 0, strata(prefecture_ind) vce(cluster prefecture) nohr
 estat phtest
+
