@@ -122,7 +122,7 @@ encode with_designated, generate(with_designated_ind)
 
 logistic gpp_2020 with_designated_ind logpop_2020 income_2020 debt_2020 sector_1_2020 sector_2_2020 population_prefecture_excl_2020 income_prefecture_excl_2020 liberal_prefecture_2020, vce(cluster prefecture) coef
 
-import delimited "C:\Users\desch\OneDrive\Documents\doctorat\Waseda\panel10\submission\survival.csv", clear
+import delimited "...survival.csv", clear
 generate logpop = log(population)
 generate logpop_prefecture = log(population_prefecture_excl)
 replace year = year - 2010
@@ -440,4 +440,5 @@ stcox count_publish_10km_lag_1 count_gpp_10km_lag_1 count_gpp_beyond_10km_lag_1 
 estat phtest
 stcox count_publish_20km_lag_1 count_gpp_20km_lag_1 count_gpp_beyond_20km_lag_1 logpop income debt sector_1 sector_2 liveable mean_log_pop_20km mean_income_20km  if nb_neighbors_20km > 0, strata(prefecture_ind) vce(cluster prefecture) nohr
 estat phtest
+
 
